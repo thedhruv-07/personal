@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import { Sun, Moon, Menu, X } from 'lucide-react';
 import { Link } from 'react-scroll';
@@ -37,15 +37,13 @@ const Navbar = ({ isDarkMode, toggleTheme }: { isDarkMode: boolean; toggleTheme:
                 }}
                 animate={hidden ? "hidden" : "visible"}
                 transition={{ duration: 0.35, ease: "easeInOut" }}
-                className={`fixed top-0 inset-x-0 z-40 transition-all duration-300 px-4 md:px-6 py-4 \${
-          isScrolled ? 'py-2' : ''
-        }`}
+                className={`fixed top-0 inset-x-0 z-40 transition-all duration-300 px-4 md:px-6 py-4 ${isScrolled ? 'py-2' : ''
+                    }`}
             >
-                <div className={`mx-auto max-w-5xl rounded-2xl flex items-center justify-between px-6 py-3 transition-all duration-500 \${
-          isScrolled 
-            ? 'glass shadow-lg dark:shadow-black/20' 
-            : 'bg-transparent'
-        }`}>
+                <div className={`mx-auto max-w-5xl rounded-2xl flex items-center justify-between px-6 py-3 transition-all duration-500 ${isScrolled
+                    ? 'glass shadow-lg dark:shadow-black/20'
+                    : 'bg-transparent'
+                    }`}>
                     {/* Logo */}
                     <Link
                         to="home"

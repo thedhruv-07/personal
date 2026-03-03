@@ -80,15 +80,15 @@ const Hero = () => {
                     </motion.div>
 
                     <motion.div variants={itemVariants} className="mt-12 flex items-center justify-center lg:justify-start gap-6 text-zinc-500 dark:text-zinc-400">
-                        <a href="https://github.com/dhruv" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-900 dark:hover:text-white transition-colors hover:-translate-y-1 duration-300">
+                        <a href="https://github.com/thedhruv-07" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-900 dark:hover:text-white transition-colors hover:-translate-y-1 duration-300">
                             <span className="sr-only">GitHub</span>
                             <Github className="w-6 h-6" />
                         </a>
-                        <a href="https://linkedin.com/in/dhruv" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition-colors hover:-translate-y-1 duration-300">
+                        <a href="https://www.linkedin.com/in/dhruv077/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition-colors hover:-translate-y-1 duration-300">
                             <span className="sr-only">LinkedIn</span>
                             <Linkedin className="w-6 h-6" />
                         </a>
-                        <a href="mailto:contact@dhruv.com" className="hover:text-zinc-900 dark:hover:text-white transition-colors hover:-translate-y-1 duration-300">
+                        <a href="mailto:dhruvsingh200420@gmail.com" className="hover:text-zinc-900 dark:hover:text-white transition-colors hover:-translate-y-1 duration-300">
                             <span className="sr-only">Email</span>
                             <Mail className="w-6 h-6" />
                         </a>

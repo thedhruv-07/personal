@@ -9,8 +9,8 @@ const projects = [
         image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200', // Dashboard abstract image
         tags: ['React', 'Tailwind', 'AI API', 'Context API'],
         featured: true,
-        github: 'https://github.com/dhruv/ai-dashboard',
-        live: 'https://ai-dashboard-dhruv.vercel.app',
+        github: 'https://github.com/thedhruv-07/ai-task-manager',
+        live: 'https://ai-task-manager-liart-chi.vercel.app/',
     },
     {
         title: 'Employee Management System',
@@ -18,8 +18,8 @@ const projects = [
         image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200',
         tags: ['React', 'Context API', 'Tailwind CSS', 'CRUD'],
         featured: false,
-        github: 'https://github.com/dhruv/emp-mgmt',
-        live: 'https://emp-mgmt-chi.vercel.app',
+        github: 'https://github.com/thedhruv-07/EMS',
+        live: 'https://ems-me.vercel.app/',
     },
     {
         title: 'Hotel Booking Application',
@@ -36,8 +36,8 @@ const projects = [
         image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200', // AI abstract
         tags: ['React', 'Gemini API', 'Tailwind'],
         featured: false,
-        github: 'https://github.com/dhruv/gemini-clone',
-        live: '#',
+        github: 'https://github.com/thedhruv-07/clone',
+        live: 'https://clone-kohl-rho.vercel.app/',
     },
 ];
 
@@ -55,9 +55,8 @@ const ProjectCard = ({ project }: { project: any }) => {
         <motion.div
             ref={cardRef}
             style={{ scale, opacity }}
-            className={`group relative flex flex-col \${
-        project.featured ? 'lg:flex-row' : ''
-      } gap-8 p-6 lg:p-8 rounded-[2rem] glass border border-zinc-200 dark:border-zinc-800 overflow-hidden hover:border-blue-500/30 transition-colors duration-500`}
+            className={`group relative flex flex-col ${project.featured ? 'lg:flex-row' : ''
+                } gap-8 p-6 lg:p-8 rounded-[2rem] glass border border-zinc-200 dark:border-zinc-800 overflow-hidden hover:border-blue-500/30 transition-colors duration-500`}
         >
             {project.featured && (
                 <div className="absolute top-8 right-8 z-20 flex items-center gap-1.5 px-3 py-1.5 bg-yellow-500/10 text-yellow-600 dark:text-yellow-400 text-xs font-semibold rounded-full border border-yellow-500/20 backdrop-blur-md">
@@ -67,7 +66,7 @@ const ProjectCard = ({ project }: { project: any }) => {
             )}
 
             {/* Image Container with Hover Effects */}
-            <div className={`relative overflow-hidden rounded-2xl \${project.featured ? 'lg:w-1/2 lg:aspect-video aspect-[16/10]' : 'aspect-video w-full'}`}>
+            <div className={`relative overflow-hidden rounded-2xl ${project.featured ? 'lg:w-1/2 lg:aspect-video aspect-[16/10]' : 'aspect-video w-full'}`}>
                 <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
                 <img
                     src={project.image}
@@ -80,7 +79,7 @@ const ProjectCard = ({ project }: { project: any }) => {
             </div>
 
             {/* Content */}
-            <div className={`flex flex-col justify-center flex-1 \${project.featured ? 'lg:py-4' : ''}`}>
+            <div className={`flex flex-col justify-center flex-1 ${project.featured ? 'lg:py-4' : ''}`}>
                 <h3 className="text-2xl font-bold mb-4 group-hover:text-blue-500 transition-colors">
                     {project.title}
                 </h3>

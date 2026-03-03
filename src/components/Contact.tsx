@@ -40,7 +40,7 @@ const Contact = () => {
                                 </div>
                                 <div>
                                     <p className="text-sm text-zinc-500 dark:text-zinc-400 font-medium mb-1">Email</p>
-                                    <p className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">dhruv@example.com</p>
+                                    <p className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">dhruvsingh200420@gmail.com</p>
                                 </div>
                             </a>
 
@@ -50,7 +50,7 @@ const Contact = () => {
                                 </div>
                                 <div>
                                     <p className="text-sm text-zinc-500 dark:text-zinc-400 font-medium mb-1">Phone</p>
-                                    <p className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">+91 99999 99999</p>
+                                    <p className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">+91 9354567496 </p>
                                 </div>
                             </a>
 
@@ -67,10 +67,10 @@ const Contact = () => {
 
                         {/* Socials array */}
                         <div className="mt-12 pt-8 border-t border-zinc-200 dark:border-zinc-800 flex items-center gap-4 relative z-10">
-                            <a href="https://github.com/dhruv" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
+                            <a href="https://github.com/thedhruv-07" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
                                 <Github className="w-6 h-6 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50" />
                             </a>
-                            <a href="https://linkedin.com/in/dhruv" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full hover:bg-blue-50/50 hover:dark:bg-blue-900/20 transition-colors">
+                            <a href="https://www.linkedin.com/in/dhruv077/" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full hover:bg-blue-50/50 hover:dark:bg-blue-900/20 transition-colors">
                                 <Linkedin className="w-6 h-6 text-zinc-600 dark:text-zinc-400 hover:text-blue-500 dark:hover:text-blue-400" />
                             </a>
                         </div>
