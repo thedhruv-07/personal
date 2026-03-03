@@ -69,7 +69,7 @@ const Hero = () => {
                         </Link>
 
                         <a
-                            href="/resume.pdf"
+                            href="/Dhruv.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-full sm:w-auto group flex items-center justify-center gap-2 px-8 py-3.5 rounded-full glass border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-zinc-50 font-semibold transition-all hover:bg-zinc-100 dark:hover:bg-zinc-900/50 hover:scale-105 active:scale-95"
