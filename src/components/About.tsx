@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { Award, Code2, Cpu, Zap } from 'lucide-react';
 
 const About = () => {
@@ -13,7 +13,7 @@ const About = () => {
         },
     };
 
-    const itemVariants: any = {
+    const itemVariants: Variants = {
         hidden: { opacity: 0, y: 20 },
         visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100 } },
     };
@@ -42,12 +42,12 @@ const About = () => {
                         </motion.div>
 
                         <motion.p variants={itemVariants} className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                            I'm a passionate <b>Frontend Developer</b> with a deep focus on crafting <b>scalable UI systems</b> and ensuring a <b>performance mindset</b> in every line of code I write.
-                            Currently pursuing my B.Tech in Computer Engineering, I specialize in combining modern design principles with rock-solid React architectures.
+                            I’m an <b>AI-focused MERN stack developer</b> who builds <b>intelligent, production-ready web apps</b> by combining modern full-stack architecture with <b>LLM integrations</b>.
+                            I’ve worked on AI dashboards, chat interfaces, and workflow tools—shipping fast with a strong focus on clean UX and reliable backend APIs.
                         </motion.p>
 
                         <motion.p variants={itemVariants} className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                            My goal is to secure a Software Engineering/Frontend Internship where I can build impactful products and grow my expertise in creating world-class user experiences that feel smart, fast, and remarkably intuitive.
+                            I’m especially interested in <b>GenAI product building</b>: prompt engineering, AI workflow design, and integrating <b>Gemini/OpenAI APIs</b> to deliver real-world features that users actually feel.
                         </motion.p>
 
                         {/* Education Box */}
@@ -72,10 +72,10 @@ const About = () => {
                     {/* Cards Grid */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         {[
-                            { icon: Code2, title: 'React Expertise', desc: 'Building modern SPA and interactive interfaces with Hooks and Context.' },
-                            { icon: Zap, title: 'Performance Mindset', desc: 'Lighthouse 90+ focus, lazy loading, and optimized rendering loops.' },
-                            { icon: Cpu, title: 'Scalable Systems', desc: 'Component architectures that scale effortlessly across large codebases.' },
-                            { icon: Award, title: 'Internship Ready', desc: 'Proficient with Git, CI/CD, project management, and agile environments.' },
+                            { icon: Cpu, title: 'LLM Integration', desc: 'Gemini/OpenAI API integration, structured prompting, and AI feature delivery.' },
+                            { icon: Code2, title: 'MERN Full Stack', desc: 'Express APIs + MongoDB persistence with responsive React frontends.' },
+                            { icon: Zap, title: 'AI Workflows', desc: 'Designing flows that combine tools, validation, and error handling.' },
+                            { icon: Award, title: 'Ship Fast', desc: 'Rapid prototyping mindset with Git/GitHub and deployment to Vercel/Netlify.' },
                         ].map((feature, i) => (
                             <motion.div
                                 key={i}

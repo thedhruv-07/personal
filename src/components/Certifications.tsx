@@ -4,24 +4,21 @@ import { Award, CheckCircle2 } from 'lucide-react';
 const certifications = [
     {
         title: 'Deloitte Technology Job Simulation',
-        issuer: 'Deloitte',
         role: 'Full Stack Developer',
-        date: 'Recent',
-        skills: ['Software Engineering', 'System Architecture', 'Agile Methodologies'],
-    },
-    {
-        title: 'Full Stack Developer Bootcamp',
-        issuer: 'Tech Institute',
-        role: 'Trainee',
-        date: '2023',
-        skills: ['MERN Stack', 'RESTful APIs', 'Database Design'],
+        issuer: 'Deloitte',
+        skills: ['Full Stack Development', 'Software Engineering'],
     },
     {
         title: 'AI for Engineers Bootcamp',
-        issuer: 'AI Nexus',
+        issuer: 'Bootcamp',
         role: 'Participant',
-        date: '2023',
-        skills: ['Machine Learning', 'AI Integration', 'Python'],
+        skills: ['LLM Concepts', 'AI Integration', 'Prompting'],
+    },
+    {
+        title: 'Full Stack Developer Bootcamp',
+        issuer: 'Bootcamp',
+        role: 'Participant',
+        skills: ['MERN Stack', 'REST APIs', 'Deployment'],
     },
 ];
 
@@ -45,7 +42,7 @@ const Certifications = () => {
                         transition={{ delay: 0.1 }}
                         className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto"
                     >
-                        Continuous learning and validation of architectural design patterns and emerging technologies.
+                        Certifications and bootcamps that support my work in AI, GenAI, and full-stack development.
                     </motion.p>
                 </div>
 

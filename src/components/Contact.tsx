@@ -15,8 +15,8 @@ const Contact = () => {
                         Let's build together
                     </h2>
                     <p className="text-lg text-zinc-600 dark:text-zinc-400">
-                        Currently looking for new opportunities and interested in frontend engineering roles.
-                        Whether you have a question or just want to say hi, I'll try my best to get back to you!
+                        Currently looking for internships/opportunities in AI, GenAI, and full-stack development.
+                        Whether you have a question or want to collaborate, I’ll try my best to get back to you!
                     </p>
                 </motion.div>
 
@@ -34,7 +34,7 @@ const Contact = () => {
                         <h3 className="text-2xl font-bold mb-8 relative z-10">Contact Information</h3>
 
                         <div className="space-y-8 relative z-10">
-                            <a href="mailto:dhruv@example.com" className="flex items-center gap-6 group">
+                            <a href="mailto:dhruvsingh200420@gmail.com" className="flex items-center gap-6 group">
                                 <div className="w-12 h-12 rounded-full bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center text-zinc-600 dark:text-zinc-400 group-hover:bg-blue-500 group-hover:text-white transition-colors duration-300">
                                     <Mail className="w-5 h-5" />
                                 </div>
@@ -44,7 +44,7 @@ const Contact = () => {
                                 </div>
                             </a>
 
-                            <a href="tel:+919999999999" className="flex items-center gap-6 group">
+                            <a href="tel:+919354567496" className="flex items-center gap-6 group">
                                 <div className="w-12 h-12 rounded-full bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center text-zinc-600 dark:text-zinc-400 group-hover:bg-blue-500 group-hover:text-white transition-colors duration-300">
                                     <Phone className="w-5 h-5" />
                                 </div>

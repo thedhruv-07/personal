@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { ArrowRight, Download, Github, Linkedin, Mail } from 'lucide-react';
 import { Link } from 'react-scroll';
 
@@ -14,7 +14,7 @@ const Hero = () => {
         },
     };
 
-    const itemVariants: any = {
+    const itemVariants: Variants = {
         hidden: { opacity: 0, y: 20 },
         visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100 } },
     };
@@ -49,11 +49,11 @@ const Hero = () => {
                     </motion.h1>
 
                     <motion.div variants={itemVariants} className="text-2xl md:text-3xl font-semibold mb-6 text-zinc-700 dark:text-zinc-300">
-                        Frontend Developer
+                        AI Engineer • GenAI Builder • MERN Stack Developer
                     </motion.div>
 
                     <motion.p variants={itemVariants} className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl mb-8 leading-relaxed mx-auto lg:mx-0">
-                        Frontend-focused Computer Engineering student building scalable React applications, dashboards, and AI-powered interfaces.
+                        AI-focused MERN stack developer building intelligent, AI-powered web applications using LLM APIs and modern full-stack architecture. Experienced in integrating Gemini/OpenAI APIs, building AI workflows, and shipping production-ready tools with fast iteration cycles.
                     </motion.p>
 
                     <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
@@ -69,7 +69,7 @@ const Hero = () => {
                         </Link>
 
                         <a
-                            href="/Dhruv.pdf"
+                            href="/AI.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-full sm:w-auto group flex items-center justify-center gap-2 px-8 py-3.5 rounded-full glass border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-zinc-50 font-semibold transition-all hover:bg-zinc-100 dark:hover:bg-zinc-900/50 hover:scale-105 active:scale-95"

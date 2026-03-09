@@ -2,46 +2,56 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { ExternalLink, Github, Star } from 'lucide-react';
 import { useRef } from 'react';
 
-const projects = [
+type Project = {
+    title: string;
+    description: string;
+    image: string;
+    tags: string[];
+    featured: boolean;
+    github: string;
+    live?: string;
+};
+
+const projects: Project[] = [
+    {
+        title: 'AI Study Planner (MERN + LLM)',
+        description: 'Full-stack AI-powered study planner that generates dynamic learning roadmaps. Built Express APIs for AI requests and persistent user data in MongoDB, and integrated Gemini for personalized schedules with structured prompt engineering.',
+        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200', // Dashboard abstract image
+        tags: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'Gemini API'],
+        featured: true,
+        github: 'https://github.com/thedhruv-07',
+        live: 'https://brainplan-ai.vercel.app/',
+    },
     {
         title: 'AI Manager Dashboard',
-        description: 'Built an intelligent AI-powered management dashboard that helps users automate workflows, manage tasks, and interact with AI tools in a unified interface. Focused on clean architecture, real-time responsiveness, and premium UX.',
-        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200', // Dashboard abstract image
-        tags: ['React', 'Tailwind', 'AI API', 'Context API'],
-        featured: true,
+        description: 'Centralized AI workflow dashboard integrating 5+ AI tools into one unified interface. Built modular React architecture with Context API, managed async AI calls with validation/error handling, and optimized UX for fast load times.',
+        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200',
+        tags: ['React.js', 'AI APIs', 'Context API', 'Tailwind CSS'],
+        featured: false,
         github: 'https://github.com/thedhruv-07/ai-task-manager',
         live: 'https://ai-task-manager-liart-chi.vercel.app/',
     },
     {
+        title: 'Gemini AI Clone',
+        description: 'Real-time AI chat interface integrating Gemini LLM. Implemented prompt-based interaction with structured response rendering, async/await + Fetch API communication, and a responsive production-ready UI.',
+        image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200', // AI abstract
+        tags: ['JavaScript', 'Gemini API', 'HTML', 'CSS'],
+        featured: false,
+        github: 'https://github.com/thedhruv-07/clone',
+        live: undefined,
+    },
+    {
         title: 'Employee Management System',
-        description: 'Role-based dashboard handling 150+ users with Full CRUD functionality built using Context API and responsive Tailwind UI.',
+        description: 'Role-based dashboard with CRUD operations. Built reusable components, efficient state architecture, local storage persistence, and responsive UI.',
         image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200',
-        tags: ['React', 'Context API', 'Tailwind CSS', 'CRUD'],
+        tags: ['React.js', 'JavaScript', 'Tailwind CSS', 'CRUD'],
         featured: false,
         github: 'https://github.com/thedhruv-07/EMS',
         live: 'https://ems-me.vercel.app/',
     },
-    {
-        title: 'Hotel Booking Application',
-        description: 'A full-scale booking platform featuring Clerk authentication, protected routes, complex booking state management, and performance optimized (<2s load).',
-        image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=1200',
-        tags: ['React', 'Clerk Auth', 'State Management'],
-        featured: false,
-        github: 'https://github.com/dhruv/hotel-booking',
-        live: '#',
-    },
-    {
-        title: 'Gemini AI Chat Clone',
-        description: 'A highly responsive chat interface integrating the Gemini API with real-time streaming chat, error handling, and a modern responsive UI.',
-        image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200', // AI abstract
-        tags: ['React', 'Gemini API', 'Tailwind'],
-        featured: false,
-        github: 'https://github.com/thedhruv-07/clone',
-        live: 'https://clone-kohl-rho.vercel.app/',
-    },
 ];
 
-const ProjectCard = ({ project }: { project: any }) => {
+const ProjectCard = ({ project }: { project: Project }) => {
     const cardRef = useRef(null);
     const { scrollYProgress } = useScroll({
         target: cardRef,
@@ -100,15 +110,17 @@ const ProjectCard = ({ project }: { project: any }) => {
                 </div>
 
                 <div className="flex items-center gap-4 mt-auto">
-                    <a
-                        href={project.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 text-sm font-semibold hover:scale-105 transition-transform"
-                    >
-                        Live Demo
-                        <ExternalLink className="w-4 h-4" />
-                    </a>
+                    {project.live ? (
+                        <a
+                            href={project.live}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 text-sm font-semibold hover:scale-105 transition-transform"
+                        >
+                            Live Demo
+                            <ExternalLink className="w-4 h-4" />
+                        </a>
+                    ) : null}
                     <a
                         href={project.github}
                         target="_blank"

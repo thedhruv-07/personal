@@ -2,27 +2,32 @@ import { motion } from 'framer-motion';
 
 const skills = [
     {
-        category: 'Languages',
-        items: ['JavaScript (ES6+)', 'HTML5', 'CSS3', 'TypeScript'],
+        category: 'AI / GenAI',
+        items: ['Gemini API', 'LLM Integration', 'Prompt Engineering', 'AI Workflow Design'],
     },
     {
-        category: 'Frameworks',
-        items: ['React.js', 'Tailwind CSS', 'Framer Motion'],
+        category: 'Frontend',
+        items: ['React.js', 'JavaScript (ES6+)', 'Tailwind CSS', 'HTML5', 'CSS3'],
     },
     {
-        category: 'Concepts',
+        category: 'Backend / Database',
+        items: ['Node.js', 'Express.js', 'MongoDB'],
+    },
+    {
+        category: 'Concepts / Tools',
         items: [
+            'REST API Development',
+            'Async/Await',
+            'Fetch API',
             'State Management',
-            'React Hooks',
-            'Responsive Design',
-            'REST APIs',
-            'Performance Optimization',
-            'Basic DSA',
+            'Context API',
+            'Git',
+            'GitHub',
+            'Postman',
+            'Vercel',
+            'Netlify',
+            'VS Code',
         ],
-    },
-    {
-        category: 'Tools',
-        items: ['Git', 'GitHub', 'Vite', 'npm', 'Netlify', 'Vercel', 'VS Code'],
     },
 ];
 
