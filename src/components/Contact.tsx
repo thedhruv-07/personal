@@ -33,17 +33,17 @@ const Contact = () => {
         setStatus('idle');
 
         try {
+            const formDataToSend = new FormData();
+            formDataToSend.append('name', formData.name);
+            formDataToSend.append('email', formData.email);
+            formDataToSend.append('message', formData.message);
+
             const response = await fetch(CONTACT_ENDPOINT, {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
                     Accept: 'application/json',
                 },
-                body: JSON.stringify({
-                    name: formData.name,
-                    email: formData.email,
-                    message: formData.message,
-                }),
+                body: formDataToSend,
             });
 
             if (response.ok) {
