@@ -1,7 +1,64 @@
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Phone, Github, Linkedin } from 'lucide-react';
+import { useState } from 'react';
+
+const CONTACT_ENDPOINT = import.meta.env.VITE_CONTACT_ENDPOINT;
 
 const Contact = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: '',
+    });
+
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [status, setStatus] = useState<'idle' | 'success' | 'error' | 'notConfigured'>('idle');
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFormData(prev => ({
+            ...prev,
+            [e.target.id]: e.target.value,
+        }));
+    };
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        if (!CONTACT_ENDPOINT) {
+            setStatus('notConfigured');
+            return;
+        }
+
+        setIsSubmitting(true);
+        setStatus('idle');
+
+        try {
+            const response = await fetch(CONTACT_ENDPOINT, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Accept: 'application/json',
+                },
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    message: formData.message,
+                }),
+            });
+
+            if (response.ok) {
+                setStatus('success');
+                setFormData({ name: '', email: '', message: '' });
+            } else {
+                setStatus('error');
+            }
+        } catch {
+            setStatus('error');
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
     return (
         <section id="contact" className="py-24 relative">
             <div className="container px-6 mx-auto w-full max-w-6xl">
@@ -82,7 +139,7 @@ const Contact = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         className="glass p-10 rounded-[2rem] border border-zinc-200 dark:border-zinc-800 space-y-6"
-                        onSubmit={(e) => e.preventDefault()}
+                        onSubmit={handleSubmit}
                     >
                         <div className="space-y-2">
                             <label htmlFor="name" className="text-sm font-medium text-zinc-700 dark:text-zinc-300 ml-1">Full Name</label>
@@ -90,6 +147,9 @@ const Contact = () => {
                                 type="text"
                                 id="name"
                                 placeholder="John Doe"
+                                value={formData.name}
+                                onChange={handleChange}
+                                required
                                 className="w-full px-5 py-4 rounded-xl bg-white/50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all placeholder:text-zinc-400"
                             />
                         </div>
@@ -99,6 +159,9 @@ const Contact = () => {
                                 type="email"
                                 id="email"
                                 placeholder="john@company.com"
+                                value={formData.email}
+                                onChange={handleChange}
+                                required
                                 className="w-full px-5 py-4 rounded-xl bg-white/50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all placeholder:text-zinc-400"
                             />
                         </div>
@@ -108,15 +171,40 @@ const Contact = () => {
                                 id="message"
                                 rows={4}
                                 placeholder="How can I help you?"
+                                value={formData.message}
+                                onChange={handleChange}
+                                required
                                 className="w-full px-5 py-4 rounded-xl bg-white/50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all placeholder:text-zinc-400 resize-none"
                             />
                         </div>
                         <button
                             type="submit"
-                            className="w-full py-4 rounded-xl bg-zinc-900 dark:bg-zinc-50 text-white dark:text-zinc-900 font-bold text-lg hover:scale-[1.02] active:scale-[0.98] transition-transform shadow-lg shadow-zinc-900/20 dark:shadow-white/10"
+                            disabled={isSubmitting}
+                            className="w-full py-4 rounded-xl bg-zinc-900 dark:bg-zinc-50 text-white dark:text-zinc-900 font-bold text-lg hover:scale-[1.02] active:scale-[0.98] transition-transform shadow-lg shadow-zinc-900/20 dark:shadow-white/10 disabled:opacity-70 disabled:cursor-not-allowed"
                         >
-                            Send Message
+                            {isSubmitting ? 'Sending...' : 'Send Message'}
                         </button>
+                        {status === 'success' && (
+                            <p className="text-sm text-green-600 dark:text-green-400">
+                                Thank you! Your message has been sent.
+                            </p>
+                        )}
+                        {status === 'error' && (
+                            <p className="text-sm text-red-600 dark:text-red-400">
+                                Something went wrong. Please try again later or email me directly at{' '}
+                                <a href="mailto:dhruvsingh200420@gmail.com" className="underline">
+                                    dhruvsingh200420@gmail.com
+                                </a>.
+                            </p>
+                        )}
+                        {status === 'notConfigured' && (
+                            <p className="text-sm text-amber-600 dark:text-amber-400">
+                                Contact form backend is not configured yet. Please email me directly at{' '}
+                                <a href="mailto:dhruvsingh200420@gmail.com" className="underline">
+                                    dhruvsingh200420@gmail.com
+                                </a>.
+                            </p>
+                        )}
                     </motion.form>
                 </div>
             </div>
