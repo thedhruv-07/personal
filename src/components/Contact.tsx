@@ -33,10 +33,8 @@ const Contact = () => {
         setStatus('idle');
 
         try {
-            const formDataToSend = new FormData();
-            formDataToSend.append('name', formData.name);
-            formDataToSend.append('email', formData.email);
-            formDataToSend.append('message', formData.message);
+            const form = e.currentTarget;
+            const formDataToSend = new FormData(form);
 
             const response = await fetch(CONTACT_ENDPOINT, {
                 method: 'POST',
@@ -49,6 +47,7 @@ const Contact = () => {
             if (response.ok) {
                 setStatus('success');
                 setFormData({ name: '', email: '', message: '' });
+                form.reset();
             } else {
                 setStatus('error');
             }
@@ -146,6 +145,7 @@ const Contact = () => {
                             <input
                                 type="text"
                                 id="name"
+                                name="name"
                                 placeholder="John Doe"
                                 value={formData.name}
                                 onChange={handleChange}
@@ -158,6 +158,7 @@ const Contact = () => {
                             <input
                                 type="email"
                                 id="email"
+                                name="email"
                                 placeholder="john@company.com"
                                 value={formData.email}
                                 onChange={handleChange}
@@ -169,6 +170,7 @@ const Contact = () => {
                             <label htmlFor="message" className="text-sm font-medium text-zinc-700 dark:text-zinc-300 ml-1">Message</label>
                             <textarea
                                 id="message"
+                                name="message"
                                 rows={4}
                                 placeholder="How can I help you?"
                                 value={formData.message}
